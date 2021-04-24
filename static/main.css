@@ -45,6 +45,16 @@ body:after {
   transition: .5s;
 }
 
+@keyframes bounce {
+  from {
+    transform: rotate(45deg) translate(-1rem, -1rem);
+  }
+
+  to {
+    transform: rotate(45deg) translate(1rem, 1rem);
+  }
+}
+
 body.scrolled:after {
   opacity: 0;
 }
