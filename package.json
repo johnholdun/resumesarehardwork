@@ -1,0 +1,22 @@
+{
+  "name": "resumesarehardwork",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "fs-extra": "^9.1.0",
+    "handlebars": "^4.7.7",
+    "node-fetch": "^2.6.1",
+    "prismic-dom": "^2.2.5"
+  },
+  "scripts": {
+    "build": "yarn node index.js",
+    "serve": "yarn http-server",
+    "watch": "yarn nodemon --exec \"yarn build\" --ext \"*\" --ignore public/"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "nodemon": "^2.0.7"
+  }
+}

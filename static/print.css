@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "Jost";
+  font-weight: bold;
+  src: url("/Jost-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Jost";
+  font-weight: normal;
+  src: url("/Jost-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: auto;
+  padding: 1rem;
+  font: 1rem/1.25 "Jost";
+  background: #fff;
+  color: #000;
+  cursor: url("/pencil.svg"), auto;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+p {
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+  cursor: inherit;
+}
+
+details {
+  clear: both;
+  overflow-y: hidden;
+}
+
+summary {
+  display: block;
+  position: relative;
+  padding-right: 4rem;
+  cursor: pointer;
+}
+
+summary:after {
+  display: none;
+}
+
+details[open] summary {
+  margin-bottom: 1rem;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+footer {
+  display: none;
+}
