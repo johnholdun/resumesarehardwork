@@ -39,5 +39,34 @@
       Pencil icon made by <a href="https://www.freepik.com" target="_blank" rel="noreferrer">Freepik</a> from <a href="https://www.flaticon.com/" target="_blank" rel="noreferrer">www.flaticon.com</a>
     </p>
   </footer>
+  <script type="module">
+    window.addEventListener('DOMContentLoaded', function() {
+      // ClassList#toggle's second argument doesn't work in IE
+      var toggleClass = function(element, className, present) {
+        var actualPresent = element.classList.contains(className);
+        if (actualPresent === present) {
+          return;
+        }
+
+        if (present) {
+          element.classList.add(className);
+        } else {
+          element.classList.remove(className);
+        }
+      };
+
+      var paragraphs = Array.prototype.slice.call(document.querySelectorAll('body > *'));
+      paragraphs[0].classList.add('visible');
+
+      setInterval(function() {
+        toggleClass(document.body, 'scrolled', window.scrollY > 0);
+
+        paragraphs.forEach(function(paragraph) {
+          var visible = paragraph.offsetTop <= window.scrollY + (window.innerHeight * 0.75);
+          toggleClass(paragraph, 'visible', visible);
+        });
+      }, 100);
+    });
+  </script>
 </body>
 </html>

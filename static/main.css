@@ -17,7 +17,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 24px;
 }
 
 body {
@@ -30,15 +30,43 @@ body {
   cursor: url("/pencil.svg"), auto;
 }
 
+body:after {
+  content: " ";
+  border: 0 solid currentColor;
+  border-width: 0 .2rem .2rem 0;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  left: calc(50% - 1rem);
+  top: calc(100vh - 7rem);
+  opacity: 1;
+  transform: rotate(45deg);
+  animation: 1s ease infinite alternate bounce;
+  transition: .5s;
+}
+
+body.scrolled:after {
+  opacity: 0;
+}
+
+
 h1 {
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: bold;
   margin-bottom: 4rem;
 }
 
 h2 {
-  font-size: 3rem;
-  font-weight: normal;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 p {
@@ -47,6 +75,17 @@ p {
   line-height: 1.2;
   margin-bottom: 4rem;
   text-align: left;
+}
+
+.js body > * {
+  opacity: 0;
+  transform: translate(0, 4rem);
+  transition: .5s;
+}
+
+.js body > *.visible {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 a {
