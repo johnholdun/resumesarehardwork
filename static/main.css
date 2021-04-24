@@ -21,6 +21,12 @@ html {
   cursor: url("/pencil-cursor.svg"), auto;
 }
 
+@media (max-width: 500px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 body {
   margin: 5rem auto;
   padding: 0 5rem;
@@ -28,6 +34,13 @@ body {
   font: 5rem/1.25 "Jost";
   background: #515a48;
   color: #efeae6;
+}
+
+@media (max-width: 500px) {
+  body {
+    margin: 0;
+    padding: 2rem;
+  }
 }
 
 body:after {
@@ -66,11 +79,17 @@ h1 {
   margin-bottom: 4rem;
 }
 
+@media (max-width: 500px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
 h2 {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 h3 {
@@ -90,7 +109,7 @@ p {
 .js body > * {
   opacity: 0;
   transform: translate(0, 4rem);
-  transition: .5s;
+  transition: opacity .5s, transform .5s;
 }
 
 .js body > *.visible {
