@@ -1,8 +1,9 @@
 require('dotenv').config()
 const fetch = require('node-fetch')
-const PrismicDOM = require('prismic-dom')
 const fse = require('fs-extra')
-const Handlebars = require("handlebars")
+const Handlebars = require('handlebars')
+const path = require('path')
+const PrismicDOM = require('prismic-dom')
 
 const { PRISMIC_REPO_NAME, PRISMIC_ACCESS_TOKEN } = process.env
 
@@ -26,8 +27,8 @@ const { PRISMIC_REPO_NAME, PRISMIC_ACCESS_TOKEN } = process.env
   })
   result.seoDescription = data.seo_description[0].text
 
-  const template = Handlebars.compile((await fse.readFile(`${__dirname}/templates/home.hbs`)).toString())
+  const template = Handlebars.compile((await fse.readFile(path.join(__dirname, 'templates', 'home.hbs'))).toString())
 
-  await fse.copy(`${__dirname}/static`, `${__dirname}/public`)
-  await fse.outputFile(`${__dirname}/public/index.html`, template(result))
+  await fse.copy(path.join(__dirname, 'static'), path.join(__dirname, '/public'))
+  await fse.outputFile(path.join(__dirname, 'public', '/index.html'), template(result))
 })()
