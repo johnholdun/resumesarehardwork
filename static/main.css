@@ -18,6 +18,7 @@
 
 html {
   font-size: 24px;
+  cursor: url("/pencil-cursor.svg"), auto;
 }
 
 body {
@@ -27,7 +28,6 @@ body {
   font: 5rem/1.25 "Jost";
   background: #515a48;
   color: #efeae6;
-  cursor: url("/pencil.svg"), auto;
 }
 
 body:after {
@@ -102,6 +102,11 @@ a {
   text-decoration: underline;
   color: #d6a5ae;
   cursor: inherit;
+}
+
+a:hover, a:focus {
+  color: #fff;
+  outline: 0;
 }
 
 details {
